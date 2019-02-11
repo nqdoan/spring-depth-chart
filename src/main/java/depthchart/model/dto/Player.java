@@ -1,9 +1,11 @@
 package depthchart.model.dto;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Player {
+@Table(name = "player")
+public class Player implements Serializable {
 
     @Id
     @Column
@@ -30,6 +32,10 @@ public class Player {
 
     @Column
     private int year;
+
+    public Player(){
+
+    }
 
     public Long getPlayer_id() {
         return player_id;
